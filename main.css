@@ -1,0 +1,2 @@
+body { padding-top: 40px; }
+.box { background: coral; box-shadow: 0 0 0 2px coral inset, 0 0 0 4px white inset; padding: 9px 10px; }
