@@ -3,8 +3,14 @@ function debounce(e,t,r){function n(t){var r=b,n=v;return b=v=void 0,O=t,j=e.app
 
 
 (function ($){
-  $.fn.sameify = function() {
+  $.fn.sameify = function(options) {
     var t = this;
+    var settings = $.extend({
+        // These are the default settings
+        refresh: 200,
+        min: 0,
+        max: 6000,
+    }, options );
     var f = debounce(function() {
       var b = 0;
       t.each(function(i, l) {
@@ -14,9 +20,17 @@ function debounce(e,t,r){function n(t){var r=b,n=v;return b=v=void 0,O=t,j=e.app
       t.each(function(i, l) {
         $(this).css('min-height', b + 'px')
       })
-    }, 200);
-    f();
-    $(window).resize(f);
+    }, settings.refresh);
+    if ($(window).width() >= settings.min && $(window).width() <= settings.max) f();
+    $(window).resize(function(){
+      console.log($(window).width(), settings.min);
+      if ($(window).width() >= settings.min && $(window).width() <= settings.max) f();
+      else {
+        t.each(function(i, l) {
+          $(this).css('min-height', '')
+        })
+      }
+    });
     return this;
   }
 }(jQuery));

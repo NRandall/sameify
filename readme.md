@@ -16,5 +16,19 @@ After Sameify:
 Incorporates debounce so that it doesn't fire a million times if the browser is resized.   
    
 Usage:   
-Import script - `<script type="text/javascript" src="./sameify.min.js"></script>`   
-Sameify your elements - `$('.shared-class').sameify();`   
+Import script - `<script type="text/javascript" src="./jquery.sameify.min.js"></script>`   
+Sameify your elements - `$('.shared-class').sameify();`    
+    
+Options:   
+*  refresh: 200 - debounce time in ms that the plugin will wait while the window is being resized   
+*  min: 0 - minimum width in pixels for the plugin to work (useful if items collapse, making same height irrelevant)   
+*  max: 6000 - maximum width in pixels for the plugin to work (useful if items become uniform at a certain width and calculation is no longer needed)   
+    
+Example: 
+```javascript    
+$('.shared-class').sameify({   
+  refresh: 50,   
+  min: 767,   
+  max: 1440   
+});
+```   

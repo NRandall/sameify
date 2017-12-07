@@ -23,10 +23,14 @@
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./sameify.min.js"></script>
+  <script type="text/javascript" src="./jquery.sameify.js"></script>
   <script type="text/javascript">
     $(function(){
-      $('.box').sameify();
+      $('.box').sameify({
+        refresh: 50,
+        min: 500,
+        max: 1600
+      });
     })
   </script>
 </body>
