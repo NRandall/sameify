@@ -23,7 +23,6 @@ function debounce(e,t,r){function n(t){var r=b,n=v;return b=v=void 0,O=t,j=e.app
     }, settings.refresh);
     if ($(window).width() >= settings.min && $(window).width() <= settings.max) f();
     $(window).resize(function(){
-      console.log($(window).width(), settings.min);
       if ($(window).width() >= settings.min && $(window).width() <= settings.max) f();
       else {
         t.each(function(i, l) {
